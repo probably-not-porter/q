@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code with Label</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        .qr-container {
+            text-align: center; /* Center the QR code and text */
+            background: black;
+            display: inline-block; /* Allows wrapping if you have multiple QR codes */
+        }
+        #qrcode {
+            /* Basic styling for the QR code container */
+            padding: 5px;
+            padding-bottom: 0px;
+            display: block; /* Ensures the text label goes below it */
+            margin: 0 auto; /* Center the QR code itself within its container */
+        }
+        .qr-label {
+            font-family: sans-serif;
+            font-size: 10px;
+            color: white;;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="qr-container">
+        <div id="qrcode"></div>
+        <p class="qr-label">PL-001</p>
+    </div>
+
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "https://example.com/your-info", // Your QR code data
+            width: 128,
+            height: 128,
+            colorDark : "#ffffff",
+            colorLight : "#000000",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
+
+</body>
+</html>
